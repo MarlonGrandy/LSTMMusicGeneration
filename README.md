@@ -52,6 +52,7 @@ The note model had the lowest validation accuracy of 63%. The offset model had a
 Over the course of the project we faced a few issues that we needed to work through:
 ### Excessive note repetitions
 Over previous iterations of our model, the generated notes entered into cycles where the same few notes were generated over and over without any interesting variation. We were able to resolve this by adding a diversity function to sample the note probability array instead of taking the largest probability value. The diversity function allowed the model to exit from the repetitive note cycles. The diversity function is shown below:
+
 <img width="608" alt="Screen Shot 2022-12-09 at 10 48 01 AM" src="https://user-images.githubusercontent.com/106160715/206673970-d7714d78-7df4-458d-ba36-42dfff36153f.png">
 
 ### Generating off of a bad seed
