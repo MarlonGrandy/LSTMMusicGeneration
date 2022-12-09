@@ -11,9 +11,9 @@ Long Short-Term Memory neural networks don't have certain problems that traditio
 
 **Project Overview**
 
-![poverview](https://user-images.githubusercontent.com/82842273/206687614-88f81389-2876-4e7f-83e5-9009e8187bc4.png)
+<img width="768" alt="Screenshot 2022-12-09 at 11 21 59 AM" src="https://user-images.githubusercontent.com/109930628/206681505-8c6d60b6-a5a6-4cdd-9425-58e047fee4ea.png">
 
-We trained three models from the dataset: notes, offsets, and durations, that were later combined to form our new Midi file. To process the data, we utilized [Music21](https://web.mit.edu/music21/doc/about/what.html) a simple but powerful toolkit for computer-aided musicology, developed by MIT, Harvard, Smith, and Mount Holyoke Colleges.
+We trained three models from the dataset: notes, offsets, and durations, that were later combined to form our new Midi file. To process the data, we utilized [Music21](https://web.mit.edu/music21/doc/about/what.html), a simple but powerful toolkit for computer-aided musicology, developed by MIT, Harvard, Smith, and Mount Holyoke Colleges.
 
 ## 2. Dataset
 We chose a [kaggle dataset](https://www.kaggle.com/datasets/soumikrakshit/classical-music-midi) of classical music midi data as the data for training the music generation mode. Tha data was initially scraped from [this](http://www.piano-midi.de) site containing piano midi files. The dataset includes 290 songs, 19 composers, and 550,000 notes in total. When training our model, we used subset of 45 songs, 5 composers, and 75,000 notes.
@@ -69,4 +69,12 @@ https://user-images.githubusercontent.com/82842273/206411747-683e7858-cc00-46b6-
 https://user-images.githubusercontent.com/82842273/206411764-4d547ddf-cfd8-4b3f-902e-9ea94ede26a8.mp4
 
 ## 8. Closing Thoughts
+This project was an overwhelming success from our humble hypothesis. It taught us a lot about LSTMs as well as working with Music21 to process large data sets. This project will certainly continue to be developed, updated, and experimented with. Given more time there are a lot that we want to implement:
+* Optimize code to use less RAM so more data can be used. Ideally the goal is to process the entire Kaggle data set with 550,000 notes.
+* Condense our three models to one that can train notes, offsets, and durations combined. This may improve performance and optimization.
+* Experiment with different genres of music and instruments. How will our output music sound like given a classic rock data set?
+* For more fun implementations, we want to create a song utilizing instruments of a full ensemble or band, ie. guitar, bass, drums, etc.
+* Write a function to export the output Midi file to sheet music so users can play it themselves if they wanted.
+
+Thank you for following our journey and we hope you enjoyed listening to the new Mozarts!
 
