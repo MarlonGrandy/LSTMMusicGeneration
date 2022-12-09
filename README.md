@@ -4,7 +4,9 @@ Marlon Grandy, Justin Zheng, and Oliver Wang
 ## 2. Dataset
 We chose [this](https://www.kaggle.com/datasets/soumikrakshit/classical-music-midi) kaggle dataset of classical music midi data, scraped from [this](http://www.piano-midi.de) site containing piano midi files. In the entire file, there is 290 songs, 19 composers, and 550,000 notes in total. When training our model, we used  subset of 45 songs, 5 composers, and 75,000 notes with 277 unique notes and chords.
 ## 3. Preprocessing
-## 4. Model Specifications
+## 4. Model Architectures
+Throughout the progression of the project many different model architectures were tested. Initially, a single model was trained on just the note data. This model architecture resulted in a training accuracy of 43% and a validation accuracy of 37%. As the project progressed, and the corresponding note durations and offsets were added as data, the model architectures also progressed.
+
 ## 5. Model Performance
 ## 6. Complications
 Over the course of this project we faced a few issues that we needed to work through:
