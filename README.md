@@ -74,6 +74,26 @@ https://user-images.githubusercontent.com/82842273/206411747-683e7858-cc00-46b6-
 
 https://user-images.githubusercontent.com/82842273/206411764-4d547ddf-cfd8-4b3f-902e-9ea94ede26a8.mp4
 
+
+https://user-images.githubusercontent.com/82842273/206751056-9ed232ac-895b-40ea-bf5e-3b0b43b15878.mp4
+
+
+https://user-images.githubusercontent.com/82842273/206751072-b6d599ef-33ac-4451-87b4-3b5919014d71.mp4
+
+
+https://user-images.githubusercontent.com/82842273/206751095-da80d563-de3e-4aeb-9581-70ece671ca12.mp4
+
+
+https://user-images.githubusercontent.com/82842273/206751108-2ea7f1fd-0c31-4fdb-b3f1-ed4b89b860f5.mp4
+
+
+https://user-images.githubusercontent.com/82842273/206751133-4f370899-bbc6-4df8-90b8-361f5312c438.mp4
+
+
+https://user-images.githubusercontent.com/82842273/206751152-f619c29d-acf9-4374-b8d4-d632bd3d81e5.mp4
+
+
+
 ## 8. Closing Thoughts
 This project was an overwhelming success from our humble hypothesis. It taught us a lot about LSTMs as well as working with Music21 to process large data sets. This project will certainly continue to be developed, updated, and experimented with. Given more time there are a lot that we want to implement:
 * Optimize code to use less RAM so more data can be used. Ideally the goal is to process the entire Kaggle data set with 550,000 notes.
