@@ -10,10 +10,9 @@ To understand LSTM's, we should first understand recurrent neural networks (RNN)
 Long Short-Term Memory neural networks don't have certain problems that traditional recurrent neural networks have, specifically the long term dependency problem. LSTMs were designed to avoid this problem and "remembering information for long periods of time is practically their default behavior." (Colah's Blog). Without getting too in depth, the main idea of LSTMs is the cell state which runs along the entire network and allows for easy transport of data to flow unchanged. You can read more about the intricacies at [Colah's Blog](https://colah.github.io/posts/2015-08-Understanding-LSTMs/). This attribute of LSTMs was particularly attractive and important to solving our problem. Because music is sequential and the current note may depend on previous notes far in the past (say 8 or 16 bars), LSTM networks excel in these exact conditions. The neural network must capture time dependent relationships between notes and chords.
 
 **Project Overview**
+We trained three models from the dataset: notes, offsets, and durations, that were later combined to form our new Midi file. To process the data, we utilized [Music21](https://web.mit.edu/music21/doc/about/what.html), a simple but powerful toolkit for computer-aided musicology, developed by MIT, Harvard, Smith, and Mount Holyoke Colleges.
 
 <img width="733" alt="Project Overview" src="https://user-images.githubusercontent.com/82842273/206688938-54999c4e-1944-4d96-997b-408e07ca2efb.png">
-
-We trained three models from the dataset: notes, offsets, and durations, that were later combined to form our new Midi file. To process the data, we utilized [Music21](https://web.mit.edu/music21/doc/about/what.html), a simple but powerful toolkit for computer-aided musicology, developed by MIT, Harvard, Smith, and Mount Holyoke Colleges.
 
 ## 2. Dataset
 We chose a [kaggle dataset](https://www.kaggle.com/datasets/soumikrakshit/classical-music-midi) of classical music midi data as the data for training the music generation mode. Tha data was initially scraped from [this](http://www.piano-midi.de) site containing piano midi files. The dataset includes 290 songs, 19 composers, and 550,000 notes in total. When training our model, we used subset of 45 songs, 5 composers, and 75,000 notes.
