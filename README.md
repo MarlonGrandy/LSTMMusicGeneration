@@ -1,7 +1,7 @@
 # LSTM Music Generation ♫♪♪
 Marlon Grandy, Justin Zheng, and Oliver Wang
 ## 1. Introduction
-As a group of avid music listeners and some musicians, we thought it would be interesting to utilize what we learned in the past three months to see if could generate some sort of music using a database. Our project goal was to train a LSTM (Long Short-Term Memory) artificial neural network that could generate classical music. The initial hypothesis was less fruitful than the outcome. We believed that the model would only be capable of creating "background" style music, or elevator music, that resembled classical styles. Looking at other similar projects online, we did not expect we would be able to train models using the offset and duration of the notes, resulting in a song of continuous and repetitive music. However, as you will see later in the blog, our expectations were superseded.
+As a group of avid music listeners and some musicians, we thought it would be interesting to utilize what we learned in the past three months to see if could generate some sort of music using a database. Our project goal was to train a LSTM (Long Short-Term Memory) artificial neural network that could generate classical music. The initial hypothesis was less fruitful than the outcome. We believed that the model would only be capable of creating "background" style music, or elevator music, that resembled classical styles. Looking at other similar projects online, we did not expect we would be able to train models using the offset and duration of the notes, resulting in a song of continuous and repetitive music. However, as you will see later in the blog, our expectations were exceeded.
 
 So why use an LSTM to generate music?
 
