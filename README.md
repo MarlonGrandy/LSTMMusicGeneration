@@ -28,7 +28,7 @@ The default model.compile parameters throughout the model architecture experimen
 ## 5. Model Performance
 The training and validation accuracies for notes, durrations, and offsets are shown below:
 
-<img width="712" alt="Screen Shot 2022-12-09 at 10 22 09 AM" src="https://user-images.githubusercontent.com/106160715/206668624-1d57b604-0ce3-4336-b9fa-ce83ac66bf0b.png">
+<img width="1000" alt="Screen Shot 2022-12-09 at 10 22 09 AM" src="https://user-images.githubusercontent.com/106160715/206668624-1d57b604-0ce3-4336-b9fa-ce83ac66bf0b.png">
 
 The note model had the lowest validation accuracy of 63%. The offset model had a validation accuracy of 87%. Finally, the duration model had a validation accuracy of 88%. The number of classes being predicted for the notes (277) was far greater compared to the offsets (28) and durations (36). Resultantly, the smaller notes accuracy was logical. 
 ## 6. Complications
