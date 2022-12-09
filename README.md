@@ -11,9 +11,13 @@ Long Short-Term Memory neural networks don't have certain problems that traditio
 
 **Project Overview**
 
+<img width="768" alt="Screenshot 2022-12-09 at 11 21 59 AM" src="https://user-images.githubusercontent.com/109930628/206681505-8c6d60b6-a5a6-4cdd-9425-58e047fee4ea.png">
+We trained three models from the dataset: notes, offsets, and durations, that were later combined to form our new Midi file. To process the data, we utilized [Music21](https://web.mit.edu/music21/doc/about/what.html), a simple but powerful toolkit for computer-aided musicology, developed by MIT, Harvard, Smith, and Mount Holyoke Colleges.
+
 ## 2. Dataset
 We chose a [kaggle dataset](https://www.kaggle.com/datasets/soumikrakshit/classical-music-midi) of classical music midi data as the data for training the music generation mode. Tha data was initially scraped from [this](http://www.piano-midi.de) site containing piano midi files. The dataset includes 290 songs, 19 composers, and 550,000 notes in total. When training our model, we used subset of 45 songs, 5 composers, and 75,000 notes.
 ## 3. Preprocessing
+Preprocessing was arguably the most important step for us. We wrote a function that used Music21's "converter.parse" method to read in each file. Every note and its metadata, was then separated and added to notes, offsets, and durations. Given that we were parsing piano music, we also had chord recognition functionality that treated notes slightly differently to accomodate. Offsets were then converted to categorical in the sense that the note's offset was relative and dependent on the previous note's offset. For example, a note with an absolute offset of 2 and a previous offset of 1 would be converted to 1 (2-1 = 1) as it is 1 offset away from the previous note. The data was later one hot encoded to determine what note it was. For training, our data was read at a segment length of 64 which we decided on after experimenting with many different values. In essence, we are reading 64 notes at a time and then shifting the window forward by one note each iteration. Lastly, we made an output vector with the targeted values.
 
 ## 4. Model Architectures
 Throughout the progression of the project many different model architectures were tested. Initially, a single model was trained on just the note data. This model architecture resulted in a training accuracy of 43% and a validation accuracy of 37%. As the project progressed, and the corresponding note durations and offsets were added as data, the model architectures also progressed.
