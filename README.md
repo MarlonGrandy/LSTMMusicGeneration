@@ -2,7 +2,7 @@
 Marlon Grandy, Justin Zheng, and Oliver Wang
 ## 1. Introduction
 ## 2. Dataset
-We chose a [kaggle dataset](https://www.kaggle.com/datasets/soumikrakshit/classical-music-midi) of classical music midi data, scraped from [this](http://www.piano-midi.de) site containing piano midi files. The dataset includes 290 songs, 19 composers, and 550,000 notes in total. When training our model, we used subset of 45 songs, 5 composers, and 75,000 notes.
+We chose a [kaggle dataset](https://www.kaggle.com/datasets/soumikrakshit/classical-music-midi) of classical music midi data as the data for training the music generation mode. Tha data was initially scraped from [this](http://www.piano-midi.de) site containing piano midi files. The dataset includes 290 songs, 19 composers, and 550,000 notes in total. When training our model, we used subset of 45 songs, 5 composers, and 75,000 notes.
 ## 3. Preprocessing
 ## 4. Model Architectures
 Throughout the progression of the project many different model architectures were tested. Initially, a single model was trained on just the note data. This model architecture resulted in a training accuracy of 43% and a validation accuracy of 37%. As the project progressed, and the corresponding note durations and offsets were added as data, the model architectures also progressed.
