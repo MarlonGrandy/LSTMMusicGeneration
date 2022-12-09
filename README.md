@@ -30,16 +30,20 @@ The training and validation accuracies for notes, durrations, and offsets are sh
 
 <img width="1000" alt="Screen Shot 2022-12-09 at 10 22 09 AM" src="https://user-images.githubusercontent.com/106160715/206668624-1d57b604-0ce3-4336-b9fa-ce83ac66bf0b.png">
 
-The note model had the lowest validation accuracy of 63%. The offset model had a validation accuracy of 87%. Finally, the duration model had a validation accuracy of 88%. The number of classes being predicted for the notes (277) was far greater compared to the offsets (28) and durations (36). Resultantly, the smaller notes accuracy was logical. All of the validation losses and accuracies were less than the training losses and accuracies. After experimenting with different model architectures to deal with the faster training progressions, we found that a dropout layer with na dropout rate of 0.25 was the most effective solution. 
+The note model had the lowest validation accuracy of 63%. The offset model had a validation accuracy of 87%. Finally, the duration model had a validation accuracy of 88%. The number of classes being predicted for the notes (277) was far greater compared to the offsets (28) and durations (36). Resultantly, the smaller notes accuracy was logical. All of the validation losses and accuracies were less than the training losses and accuracies. After experimenting with different model architectures to deal with the faster training progressions, we found that a dropout layer with a dropout rate of 0.25 was the most effective solution. 
 
 ## 6. Complications
 Over the course of the project we faced a few issues that we needed to work through:
 ### Excessive note repetitions
-Our network used to get into cycles where the same few notes were played over and over without any interesting variation. We were able to resolve this by adding diversity functions to our sampling which allowed for more interesting notes to be included.
+Over previous iterations of our model, the generated notes entered into cycles where the same few notes were generated over and over without any interesting variation. We were able to resolve this by adding a diversity function to sample the note probability array instead of taking the largest probability value. The diversity function allowed the model to exit from the repetitive note cycles. The diversity function is shown below:
+<img width="608" alt="Screen Shot 2022-12-09 at 10 48 01 AM" src="https://user-images.githubusercontent.com/106160715/206673970-d7714d78-7df4-458d-ba36-42dfff36153f.png">
+
 ### Generating off of a bad seed
-Generally, our seeds are 64-note segments picked randomly from our dataset. At times, we could get a poor seed by picking the start or end of a song, or a particularly boring segment. When this occurs, our generated audio is impacted heavily.
+The seeds used to generate music were 64-note segments picked at random from our dataset. At times, we chose seeds that sounded, to say the least, very bad. These seeds could have been from the start or end of a song, or simply a particularly boring segment. However, there were also times when the seed sounded good but the generated music sounded bad. This was likely due to the data the model was trained on and an inability for the model to generalize to the seed it was given.
+
 ### Lack of RAM available in Google Colab
-Unfortunately, we were limited by the technology we had available to us and were not able to train using the entire dataset. We then had to resort to using only a subset of the artists, which was still successful but not ideal.
+Unfortunately, we were limited by the technology we had available to us. This led to training the model on a subset of the full dataset. For deep learning models, more data will likely lead to better performance. In order to use as much data as possible we implemented garbage collectors whenever a variable became obsolete. There were other ways that we could have optimized the code to use less RAM, and it would be interesting to see how much better the model could be given more data. 
+
 ## 7. Music Samples
 Found below are samples of music that we were able to generate with our network. The first audio file is the seed that we fed the network, and the following one is the resulting output.
 
