@@ -1,6 +1,13 @@
 # LSTM Music Generation ♫♪♪
 Marlon Grandy, Justin Zheng, and Oliver Wang
 ## 1. Introduction
+As a group of avid music listeners and some musicians, we thought it would be interesting to utilize what we learned in the past three months to see if could generate some sort of music using a database. Our project goal was to train a LSTM (Long Short-Term Memory) artificial neural network that could generate classical music. The initial hypothesis was less fruitful than the outcome. We believed that the model would only be capable of creating "background" style music, or elevator music, that resembled classical styles. However, as you will see later in the blog, our expectations were superseded.
+
+**Why LSTM?**
+
+To understand LSTM's, we should first understand recurrent neural networks (RNN). Much like human thinking, RNNs utilize previously encountered data for the current task instead of just forgetting about them like traditional neural networks. In essence, recurrent neural networks are loops which allow information to persist. As a result, RNNs have been successfully used in problems such as speech recognition, language mdoeling, translation, and image captioning. For more information regarding RNNs feel free to consult [Andrej Karpathy's blog post](http://karpathy.github.io/2015/05/21/rnn-effectiveness/).
+
+Long Short-Term Memory neural networks don't have certain problems that traditional recurrent neural networks have, specifically the long term dependency problem. LSTMs were designed to avoid this problem and "remembering information for long periods of time is practically their default behavior." (Colah's Blog). Without getting too in depth, the main idea of LSTMs is the cell state which runs along the entire network and allows for easy transport of data to flow unchanged. You can read more about the intricacies at [Colah's Blog](https://colah.github.io/posts/2015-08-Understanding-LSTMs/). This attribute of LSTMs was particularly attractive and important to solving our problem. Because music is sequential and the current note may depend on previous notes far in the past (say 8 or 16 bars), LSTM networks excel in these exact conditions. The neural network must capture time dependent relationships between notes and chords.
 ## 2. Dataset
 We chose a [kaggle dataset](https://www.kaggle.com/datasets/soumikrakshit/classical-music-midi) of classical music midi data as the data for training the music generation mode. Tha data was initially scraped from [this](http://www.piano-midi.de) site containing piano midi files. The dataset includes 290 songs, 19 composers, and 550,000 notes in total. When training our model, we used subset of 45 songs, 5 composers, and 75,000 notes.
 ## 3. Preprocessing
